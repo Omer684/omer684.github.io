@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Omer — AI Engineer & Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050508;
+    --bg2: #0a0a10;
+    --bg3: #0f0f18;
+    --accent: #00ff88;
+    --accent2: #00ccff;
+    --accent3: #7b2fff;
+    --text: #e8e8f0;
+    --text2: #8888aa;
+    --border: rgba(255,255,255,0.06);
+    --glow: 0 0 40px rgba(0,255,136,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 20px var(--accent);
+  }
+
+  .cursor-ring {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(0,255,136,0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.15s ease;
+  }
+
+  /* Grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5,5,8,0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 70%);
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .hero-glow2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(123,47,255,0.08) 0%, transparent 70%);
+    bottom: -100px;
+    left: 100px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-name span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-desc {
+    font-size: 18px;
+    color: var(--text2);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+  }
+
+  .hero-desc strong { color: var(--text); font-weight: 500; }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+
+  .btn-primary:hover {
+    background: #00cc6a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,255,136,0.3);
+  }
+
+  .btn-secondary {
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    padding: 30px 60px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 60px;
+    overflow-x: auto;
+    position: relative;
+    z-index: 1;
+    background: var(--bg2);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .stat-num {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Sections */
+  section {
+    padding: 100px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-tag::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 60px;
+  }
+
+  /* Services */
+  #services { background: var(--bg2); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--bg2);
+    padding: 40px;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { background: var(--bg3); }
+
+  .service-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .service-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .service-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.7;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .tag {
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text2);
+    letter-spacing: 1px;
+  }
+
+  /* Projects */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .project-card {
+    border: 1px solid var(--border);
+    padding: 36px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg2);
+  }
+
+  .project-card:hover {
+    border-color: rgba(0,255,136,0.3);
+    transform: translateY(-4px);
+    box-shadow: var(--glow);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .project-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,204,255,0.1));
+    border: 1px solid rgba(0,255,136,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+
+  .project-arrow {
+    color: var(--text2);
+    font-size: 20px;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .project-card:hover .project-arrow {
+    color: var(--accent);
+    transform: translate(4px, -4px);
+  }
+
+  .project-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .project-metric {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Skills */
+  #skills { background: var(--bg2); }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+
+  .skill-group-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-name {
+    font-size: 14px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+
+  .skill-bar {
+    width: 100px;
+    height: 2px;
+    background: var(--border);
+    position: relative;
+  }
+
+  .skill-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transition: width 1s ease;
+  }
+
+  /* Automation showcase */
+  .automation-showcase {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 48px;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .automation-showcase::before {
+    content: 'LIVE DEMO';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    padding: 4px 12px;
+    border: 1px solid var(--accent);
+  }
+
+  .flow-diagram {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    row-gap: 16px;
+  }
+
+  .flow-node {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 16px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text);
+    position: relative;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .flow-node.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 20px rgba(0,255,136,0.1);
+  }
+
+  .flow-node-label {
+    font-size: 10px;
+    color: var(--text2);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .flow-arrow {
+    color: var(--accent);
+    font-size: 18px;
+    padding: 0 8px;
+    opacity: 0.5;
+  }
+
+  .flow-outputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 8px;
+  }
+
+  .flow-output {
+    background: rgba(0,255,136,0.05);
+    border: 1px solid rgba(0,255,136,0.15);
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  /* Experience */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 48px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -44px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .timeline-company {
+    font-size: 14px;
+    color: var(--text2);
+    margin-bottom: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.7;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+  }
+
+  /* Certifications */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .cert-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+    background: var(--bg2);
+    transition: all 0.3s;
+  }
+
+  .cert-card:hover {
+    border-color: rgba(0,255,136,0.3);
+    transform: translateY(-2px);
+  }
+
+  .cert-issuer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .cert-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .cert-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text2);
+  }
+
+  /* Contact */
+  #contact {
+    background: var(--bg2);
+    text-align: center;
+  }
+
+  .contact-email {
+    font-size: clamp(24px, 4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    margin: 32px 0;
+    transition: opacity 0.3s;
+  }
+
+  .contact-email:hover { opacity: 0.7; }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text2);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .contact-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Footer */
+  footer {
+    padding: 24px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 1px;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .blink {
+    animation: blink 1s infinite;
+    color: var(--accent);
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    section { padding: 60px 24px; }
+    .stats-bar { padding: 24px; gap: 32px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    .automation-showcase { padding: 24px; }
+    .flow-diagram { flex-direction: column; align-items: flex-start; }
+    .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">MO<span class="blink">_</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for projects</div>
+    <h1 class="hero-name">Muhammad<br><span>Omer</span></h1>
+    <p class="hero-desc">
+      <strong>AI Automation Engineer</strong> & Data Scientist.<br>
+      I build systems that work while you sleep — from intelligent workflows to ML pipelines.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Hire Me</a>
+      <a href="#projects" class="btn-secondary">View Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">4+</span>
+    <span class="stat-label">Shipped Projects</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">0.997</span>
+    <span class="stat-label">R² Score Achieved</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">20x</span>
+    <span class="stat-label">Inference Speed Boost</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">5+</span>
+    <span class="stat-label">Certifications</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">∞</span>
+    <span class="stat-label">Automations Built</span>
+  </div>
+</div>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-tag">What I Do</div>
+  <h2 class="section-title reveal">Services</h2>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">⚡</div>
+      <h3 class="service-title">AI Workflow Automation</h3>
+      <p class="service-desc">End-to-end automation pipelines using n8n, Google Gemini, and webhooks. Form submitted → AI generates content → delivered automatically.</p>
+      <div class="service-tags">
+        <span class="tag">n8n</span>
+        <span class="tag">Gemini AI</span>
+        <span class="tag">Webhooks</span>
+        <span class="tag">Google Sheets</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">🤖</div>
+      <h3 class="service-title">AI WhatsApp Bots</h3>
+      <p class="service-desc">24/7 intelligent chatbots that qualify leads, answer inquiries, and book appointments — fully automated via WhatsApp Business API.</p>
+      <div class="service-tags">
+        <span class="tag">WhatsApp API</span>
+        <span class="tag">NLP</span>
+        <span class="tag">Lead Qualification</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">🧠</div>
+      <h3 class="service-title">ML Model Development</h3>
+      <p class="service-desc">Predictive models, computer vision, and data pipelines. From raw data to deployed intelligent systems using Python, Scikit-learn, and TensorFlow.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">YOLOv8</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon">📊</div>
+      <h3 class="service-title">Data Analytics & BI</h3>
+      <p class="service-desc">Transform raw data into actionable dashboards using Power BI, Tableau, and Python visualization libraries. Decision-making powered by data.</p>
+      <div class="service-tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon">🏠</div>
+      <h3 class="service-title">Real Estate AI Systems</h3>
+      <p class="service-desc">Specialized automation for property agencies — AI listing generation, client email blasts, multi-platform content (Zameen, OLX, Instagram) in seconds.</p>
+      <div class="service-tags">
+        <span class="tag">Zameen.com</span>
+        <span class="tag">OLX</span>
+        <span class="tag">Auto-Email</span>
+        <span class="tag">Urdu Copy</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon">👁️</div>
+      <h3 class="service-title">Computer Vision Systems</h3>
+      <p class="service-desc">Real-time object detection, license plate recognition, and video analytics. Deployed as web applications with live streaming dashboards.</p>
+      <div class="service-tags">
+        <span class="tag">YOLOv8</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">Flask</span>
+        <span class="tag">EasyOCR</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Automation showcase -->
+  <div class="automation-showcase reveal">
+    <div class="section-tag">Featured Automation</div>
+    <h3 style="font-size:24px;font-weight:700;margin-bottom:8px;">Real Estate Listing Generator</h3>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text2);">One form → AI writes everything → delivered to all clients automatically</p>
+    <div class="flow-diagram">
+      <div class="flow-node active">
+        <span class="flow-node-label">TRIGGER</span>
+        Tally Form
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node active">
+        <span class="flow-node-label">WEBHOOK</span>
+        n8n
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node active">
+        <span class="flow-node-label">AI BRAIN</span>
+        Gemini 2.5
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <span class="flow-node-label">DATABASE</span>
+        Google Sheets
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <span class="flow-node-label">LOOP</span>
+        All Clients
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-outputs">
+        <div class="flow-output">✓ Zameen.com Listing</div>
+        <div class="flow-output">✓ OLX Listing</div>
+        <div class="flow-output">✓ WhatsApp Copy</div>
+        <div class="flow-output">✓ Instagram + Hashtags</div>
+        <div class="flow-output">✓ Urdu WhatsApp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="section-tag">Portfolio</div>
+  <h2 class="section-title reveal">Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">🚗</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <h3 class="project-title">Real-Time License Plate Recognition</h3>
+      <p class="project-desc">End-to-end AI pipeline with YOLOv8 vehicle detection, Haar Cascade plate localization, and EasyOCR text recognition. Deployed as live web dashboard on Vercel.</p>
+      <div class="service-tags">
+        <span class="tag">YOLOv8</span><span class="tag">EasyOCR</span><span class="tag">Flask</span><span class="tag">OpenCV</span>
+      </div>
+      <div class="project-metric">⚡ 15-20x faster CPU inference via async optimization</div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">📦</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <h3 class="project-title">Fleet Logistics Pro</h3>
+      <p class="project-desc">Full-stack supply chain management system with real-time shipment tracking, automated status workflows, and interactive map visualization using Leaflet.js.</p>
+      <div class="service-tags">
+        <span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Leaflet.js</span><span class="tag">Tailwind</span>
+      </div>
+      <div class="project-metric">📍 Real-time tracking with automated status updates</div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">🌍</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <h3 class="project-title">Global Suicide Rate Analysis</h3>
+      <p class="project-desc">30-year global dataset ML analysis identifying high-risk patterns across multiple countries. Comprehensive EDA, feature engineering, and predictive modeling.</p>
+      <div class="service-tags">
+        <span class="tag">Random Forest</span><span class="tag">Scikit-learn</span><span class="tag">Python</span><span class="tag">Seaborn</span>
+      </div>
+      <div class="project-metric">🎯 R² = 0.997 — significantly beats traditional regression</div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">🌐</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <h3 class="project-title">Net Pulse — Network Monitor</h3>
+      <p class="project-desc">GUI-based network monitoring tool built entirely in Bash with Zenity dialogs. Real-time ping tracking, configurable servers, automatic alerts, and session logging.</p>
+      <div class="service-tags">
+        <span class="tag">Bash</span><span class="tag">Zenity</span><span class="tag">Linux</span>
+      </div>
+      <div class="project-metric">🔔 Automatic alerts on connection loss/recovery</div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">🏠</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <h3 class="project-title">Real Estate AI Automation</h3>
+      <p class="project-desc">Complete marketing automation for real estate agencies. AI generates Zameen.com, OLX, WhatsApp, Instagram, and Urdu listings from one form submission.</p>
+      <div class="service-tags">
+        <span class="tag">n8n</span><span class="tag">Gemini AI</span><span class="tag">Tally</span><span class="tag">Gmail API</span>
+      </div>
+      <div class="project-metric">⏱ 30 seconds → 5 platform listings + client blast</div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="section-tag">Technical Stack</div>
+  <h2 class="section-title reveal">Skills</h2>
+  <div class="skills-container reveal">
+    <div>
+      <div class="skill-group-title">Languages & Core</div>
+      <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">C++</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Bash</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+    </div>
+    <div>
+      <div class="skill-group-title">ML / AI</div>
+      <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">TensorFlow</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">PyTorch</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">YOLOv8</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    </div>
+    <div>
+      <div class="skill-group-title">Automation & Tools</div>
+      <div class="skill-item"><span class="skill-name">n8n</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Flask</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Power BI</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    </div>
+    <div>
+      <div class="skill-group-title">Data & Analytics</div>
+      <div class="skill-item"><span class="skill-name">Pandas / NumPy</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Matplotlib / Seaborn</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">MongoDB</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Tableau</span><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="section-tag">Background</div>
+  <h2 class="section-title reveal">Experience & Education</h2>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-date">JUL 2025 — AUG 2025</div>
+      <div class="timeline-title">Data Science Intern</div>
+      <div class="timeline-company">Ai Data House</div>
+      <p class="timeline-desc">Applied end-to-end ML workflows on real-world datasets. Gained hands-on experience in data analysis, machine learning techniques, and collaborative development in a professional setting.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2024 — PRESENT</div>
+      <div class="timeline-title">BS Data Science</div>
+      <div class="timeline-company">PAF-IAST, Haripur — Expected 2028</div>
+      <p class="timeline-desc">Undergraduate program focused on data science, machine learning, and statistical analysis. Building production-grade projects across computer vision, NLP, and automation.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2022 — 2024</div>
+      <div class="timeline-title">FSc Computer Science</div>
+      <div class="timeline-company">Jinnah Jam-e School & College</div>
+      <p class="timeline-desc">Foundation in computer science and mathematics, building the base for advanced data science and software development work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section style="background:var(--bg2);padding:60px;">
+  <div class="section-tag">Credentials</div>
+  <h2 class="section-title reveal">Certifications</h2>
+  <div class="certs-grid reveal">
+    <div class="cert-card">
+      <div class="cert-issuer">Simplilearn</div>
+      <div class="cert-name">Power BI for Beginners</div>
+      <div class="cert-date">April 2026</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">HackerRank</div>
+      <div class="cert-name">SQL (Basic)</div>
+      <div class="cert-date">January 2026</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">Online Course</div>
+      <div class="cert-name">Introduction to SQL</div>
+      <div class="cert-date">January 2026</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">Deloitte</div>
+      <div class="cert-name">Data Analytics Job Simulation</div>
+      <div class="cert-date">December 2025</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">Ai Data House</div>
+      <div class="cert-name">Data Science Internship</div>
+      <div class="cert-date">August 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <h2 class="section-title reveal">Let's Build<br>Something.</h2>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--text2);max-width:480px;margin:0 auto;line-height:1.7;">
+    Available for AI automation projects, ML development, and data science work. Based in Pakistan, working globally.
+  </p>
+  <a href="mailto:m.omarknb684@gmail.com" class="contact-email">m.omarknb684@gmail.com</a>
+  <div class="contact-links">
+    <a href="https://linkedin.com/in/muhammadomerb63814317" class="contact-link" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Omer684" class="contact-link" target="_blank">GitHub</a>
+    <a href="tel:+923159384108" class="contact-link">+92 315 9384108</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Muhammad Omer — AI Engineer & Data Scientist</p>
+  <p>Haripur, Khyber Pakhtunkhwa, PK</p>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx - 4 + 'px';
+    cursor.style.top = my - 4 + 'px';
+  });
+
+  function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx - 16 + 'px';
+    ring.style.top = ry - 16 + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2.5)';
+      ring.style.transform = 'scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      ring.style.transform = 'scale(1)';
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
