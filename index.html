@@ -1146,23 +1146,30 @@
       </div>
     </div>
     <div class="contact-form reveal">
-      <div class="form-group">
-        <label class="form-label">Your Name</label>
-        <input type="text" class="form-input" placeholder="Jane Smith">
+      <div id="form-success" style="display:none; background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.3); border-radius:8px; padding:32px; text-align:center;">
+        <div style="font-size:2.5rem; margin-bottom:12px;">✅</div>
+        <div style="font-size:1.05rem; font-weight:600; color:#00ff88; margin-bottom:8px;">Message Sent!</div>
+        <div style="font-size:0.85rem; color:var(--gray);">Thanks for reaching out — I’ll reply to your email soon.</div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="jane@company.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Subject</label>
-        <input type="text" class="form-input" placeholder="ML Engineering Role / Project Collaboration">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Message</label>
-        <textarea class="form-textarea" placeholder="Tell me about the opportunity..."></textarea>
-      </div>
-      <button class="form-submit" onclick="handleSubmit(this)">Send Message →</button>
+      <form id="contact-form" style="display:flex; flex-direction:column; gap:16px;">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" name="name" class="form-input" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-input" placeholder="jane@company.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input type="text" name="subject" class="form-input" placeholder="ML Engineering Role / Project Collaboration">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" class="form-textarea" placeholder="Tell me about the opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
+      </form>
     </div>
   </div>
 </section>
@@ -1316,19 +1323,40 @@ function filterProjects(cat, btn){
   });
 }
 
-/* ─── FORM SUBMIT ─── */
-function handleSubmit(btn){
-  btn.textContent='Sending...';
-  btn.disabled=true;
-  setTimeout(()=>{
-    btn.textContent='✓ Message Sent!';
-    btn.style.background='#00ff88';
-    setTimeout(()=>{
-      btn.textContent='Send Message →';
-      btn.style.background='';
-      btn.disabled=false;
-    },3000);
-  },1500);
+/* ─── FORMSPREE SUBMIT ─── */
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const formSuccess = document.getElementById('form-success');
+
+if(contactForm){
+  contactForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    const data = new FormData(contactForm);
+
+    try {
+      const res = await fetch('https://formspree.io/f/mrevyjlg', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if(res.ok){
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        submitBtn.textContent = '⚠ Failed — try emailing directly';
+        submitBtn.style.background = '#ff4444';
+        submitBtn.style.color = '#fff';
+        submitBtn.disabled = false;
+      }
+    } catch(err){
+      submitBtn.textContent = '⚠ Network error — try again';
+      submitBtn.disabled = false;
+    }
+  });
 }
 </script>
 </body>
