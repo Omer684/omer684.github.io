@@ -229,7 +229,7 @@ section, .section-wrap { position: relative; z-index: 1; }
 
 .hero-name {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(3.8rem, 10.5vw, 9.5rem);
+  font-size: clamp(3.8rem, 9vw, 8.5rem);
   font-weight: 800;
   line-height: .92;
   letter-spacing: -0.03em;
@@ -887,9 +887,9 @@ footer p { font-size: .78rem; color: var(--gray); }
   </div>
   <div class="about-grid">
     <div>
-      <p class="about-text reveal">I'm a <strong>BS Data Science student at PAF-IAST</strong>, Haripur, with a deep obsession for turning raw data into intelligent, production-ready systems. I don't just study machine learning — I ship it.</p>
-      <p class="about-text reveal">From building an <strong>end-to-end License Plate Recognition system</strong> that runs 15–20× faster than baseline on CPU, to a <strong>Random Forest model achieving R² = 0.997</strong> on global suicide-rate prediction, my work lives at the intersection of rigorous science and real engineering.</p>
-      <p class="about-text reveal">I've also designed full-stack web applications, network monitoring tools, and e-commerce platforms — proving that a data scientist can own the entire stack, not just the model layer.</p>
+      <p class="about-text reveal">I'm a <strong>BS Data Science student at PAF-IAST</strong>, Haripur, with a deep obsession for turning raw data into intelligent, production-ready systems. I do[...]
+      <p class="about-text reveal">From building an <strong>end-to-end License Plate Recognition system</strong> that runs 15–20× faster than baseline on CPU, to a <strong>Random Forest model [...]
+      <p class="about-text reveal">I've also designed full-stack web applications, network monitoring tools, and e-commerce platforms — proving that a data scientist can own the entire stack, n[...]
       <div class="about-stats">
         <div class="stat-card reveal">
           <div class="stat-card-num" data-count="5">0</div>
@@ -971,7 +971,7 @@ footer p { font-size: .78rem; color: var(--gray); }
     <div class="service-card reveal reveal-d1">
       <div class="service-icon">🧠</div>
       <div class="service-title">Machine Learning</div>
-      <div class="service-desc">Building, tuning, and evaluating predictive models — regression, classification, clustering, ensemble methods. From exploratory analysis to production-ready pipelines.</div>
+      <div class="service-desc">Building, tuning, and evaluating predictive models — regression, classification, clustering, ensemble methods. From exploratory analysis to production-ready pipe[...]
       <div class="service-tags"><span class="tag">Scikit-learn</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">Feature Eng.</span></div>
     </div>
     <div class="service-card reveal reveal-d2">
@@ -999,10 +999,91 @@ footer p { font-size: .78rem; color: var(--gray); }
       <div class="service-tags"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Matplotlib</span><span class="tag">Plotly</span></div>
     </div>
     <div class="service-card reveal reveal-d3">
-      <div class="service-icon">🗄️</div>
-      <div class="service-title">Data Engineering</div>
-      <div class="service-desc">Designing and querying databases, building data pipelines, cleaning messy real-world data, structuring storage for downstream ML and analytics workloads.</div>
-      <div class="service-tags"><span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">MS SQL</span><span class="tag">Pipelines</span></div>
+      <div class="service-icon">⚙️</div>
+      <div class="service-title">Backend & APIs</div>
+      <div class="service-desc">Building production-grade Flask APIs, RESTful services, and scalable backend systems that power data pipelines and ML model serving.</div>
+      <div class="service-tags"><span class="tag">Flask</span><span class="tag">REST APIs</span><span class="tag">Docker</span><span class="tag">Deployment</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<hr class="divider">
+<div class="section-wrap" id="projects">
+  <div class="bento-header">
+    <div class="reveal">
+      <span class="section-eyebrow">02 — Projects</span>
+      <h2 class="section-title">Built & Shipped</h2>
+    </div>
+  </div>
+
+  <div class="bento-grid">
+    <!-- License Plate Recognition -->
+    <div class="bento-card col-8 reveal">
+      <div class="bento-visual">
+        <div class="mini-bars">
+          <div class="mini-bar" style="height:40%;"></div>
+          <div class="mini-bar" style="height:60%;"></div>
+          <div class="mini-bar" style="height:85%;"></div>
+          <div class="mini-bar" style="height:45%;"></div>
+          <div class="mini-bar" style="height:70%;"></div>
+        </div>
+      </div>
+      <div class="bento-inner">
+        <span class="bento-label">Computer Vision</span>
+        <h3 class="bento-title">License Plate Recognition</h3>
+        <p class="bento-desc">End-to-end pipeline detecting and recognizing license plates in real-time. Optimized inference achieving 15–20× speedup on CPU.</p>
+        <div class="bento-result">✓ 15–20× Faster</div>
+        <div class="bento-stack"><span class="tag">YOLOv8</span><span class="tag">EasyOCR</span><span class="tag">OpenCV</span></div>
+      </div>
+    </div>
+
+    <!-- Model Accuracy -->
+    <div class="bento-card col-4 reveal reveal-d1">
+      <div class="bento-visual">
+        <div class="accuracy-ring">
+          <div class="ring-inner">0.997</div>
+        </div>
+      </div>
+      <div class="bento-inner">
+        <span class="bento-label">ML Model</span>
+        <h3 class="bento-title">Predictive Model</h3>
+        <p class="bento-desc">Random Forest achieving R² = 0.997 on test data.</p>
+        <div class="bento-result">✓ R² = 0.997</div>
+      </div>
+    </div>
+
+    <!-- Web App -->
+    <div class="bento-card col-4 reveal reveal-d2">
+      <div class="bento-visual" style="background:linear-gradient(135deg,#1a1a3e,#16213e);"></div>
+      <div class="bento-inner">
+        <span class="bento-label">Full Stack</span>
+        <h3 class="bento-title">E-commerce Platform</h3>
+        <p class="bento-desc">Multi-page Flask web app with payment integration and analytics dashboard.</p>
+        <div class="bento-stack"><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Stripe</span></div>
+      </div>
+    </div>
+
+    <!-- Data Analytics -->
+    <div class="bento-card col-4 reveal reveal-d3">
+      <div class="bento-visual" style="background:linear-gradient(135deg,#0f3a2e,#1a5c4a);"></div>
+      <div class="bento-inner">
+        <span class="bento-label">Analytics</span>
+        <h3 class="bento-title">Analytics Dashboard</h3>
+        <p class="bento-desc">Interactive Power BI dashboard for real-time business insights and KPI tracking.</p>
+        <div class="bento-stack"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span></div>
+      </div>
+    </div>
+
+    <!-- Network Monitor -->
+    <div class="bento-card col-8 reveal reveal-d1">
+      <div class="bento-visual" style="background:linear-gradient(135deg,#2a1a3a,#1a2a4a);"></div>
+      <div class="bento-inner">
+        <span class="bento-label">Network Tools</span>
+        <h3 class="bento-title">Network Monitoring System</h3>
+        <p class="bento-desc">Real-time packet analysis and network diagnostics tool with visual traffic representation.</p>
+        <div class="bento-stack"><span class="tag">Scapy</span><span class="tag">Python</span><span class="tag">Socket Programming</span></div>
+      </div>
     </div>
   </div>
 </div>
@@ -1011,152 +1092,36 @@ footer p { font-size: .78rem; color: var(--gray); }
 <hr class="divider">
 <div class="section-wrap" id="experience">
   <div class="reveal">
-    <span class="section-eyebrow">02 — Experience</span>
-    <h2 class="section-title">Where I've<br>Made Impact</h2>
+    <span class="section-eyebrow">03 — Experience</span>
+    <h2 class="section-title">Professional Journey</h2>
   </div>
   <div class="exp-cards">
     <div class="exp-card reveal">
-      <div class="exp-meta">
-        <div class="exp-period">May–Jun 2026</div>
+      <div>
+        <div class="exp-period">May 2026 – Present</div>
         <div class="exp-company">DecodeLabs</div>
       </div>
       <div>
-        <div class="exp-title">Data Analytics Intern</div>
+        <h3 class="exp-title">Data Analytics Intern</h3>
         <ul class="exp-bullets">
-          <li>Completed a structured virtual internship working on real-world industry datasets</li>
-          <li>Applied advanced data cleaning, EDA, and visual storytelling workflows</li>
-          <li>Delivered analytical reports translating raw data into actionable business insights</li>
+          <li>Performed exploratory data analysis on real-world datasets</li>
+          <li>Created insightful visualizations and analytical reports</li>
+          <li>Applied statistical methods for decision support</li>
         </ul>
       </div>
     </div>
-    <div class="exp-card reveal">
-      <div class="exp-meta">
-        <div class="exp-period">Jul–Aug 2025</div>
+    <div class="exp-card reveal reveal-d1">
+      <div>
+        <div class="exp-period">Jul – Aug 2025</div>
         <div class="exp-company">Ai Data House</div>
       </div>
       <div>
-        <div class="exp-title">Data Science Intern</div>
+        <h3 class="exp-title">Data Science Intern</h3>
         <ul class="exp-bullets">
-          <li>Applied foundational to intermediate data science techniques on live datasets</li>
-          <li>Implemented end-to-end ML workflows from feature engineering to model evaluation</li>
-          <li>Collaborated in a team environment to deliver data-driven solutions under deadlines</li>
+          <li>Developed and evaluated ML models on real-world datasets</li>
+          <li>Completed full data science workflow from preprocessing to deployment</li>
+          <li>Collaborated with team on feature engineering and model optimization</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<hr class="divider">
-<div class="section-wrap" id="projects" style="max-width:1300px;">
-  <div class="bento-header">
-    <div class="reveal">
-      <span class="section-eyebrow">03 — Projects</span>
-      <h2 class="section-title">Real problems,<br>real results</h2>
-    </div>
-    <a href="https://github.com/Omer684" target="_blank" class="btn-outline reveal" style="white-space:nowrap;flex-shrink:0;border-radius:50px;">View GitHub →</a>
-  </div>
-  <div class="bento-grid">
-    <!-- Card 1 -->
-    <div class="bento-card col-8 reveal">
-      <div class="bento-visual">
-        <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:14px;">
-          <div style="font-size:52px;">🚗</div>
-          <div style="font-size:.72rem;letter-spacing:2.5px;color:var(--purple-light);text-transform:uppercase;font-weight:600;font-family:'Space Mono',monospace;">CPU · ~0.6s/frame</div>
-        </div>
-
-      </div>
-      <div class="bento-inner">
-        <div class="bento-label">Computer Vision · Deep Learning · MLOps</div>
-        <div class="bento-title">Real-Time License Plate Recognition</div>
-        <div class="bento-desc">End-to-end AI pipeline: YOLOv8 vehicle detection → Haar Cascade plate localization → EasyOCR text extraction. Achieved ~0.6s/frame on CPU via async threading, lazy model loading, and resolution capping — a 15–20× speedup over baseline.</div>
-        <div class="bento-result">⚡ 15–20× faster CPU inference than baseline</div>
-        <div class="bento-stack"><span class="tag">Python</span><span class="tag">YOLOv8</span><span class="tag">EasyOCR</span><span class="tag">OpenCV</span><span class="tag">Flask</span><span class="tag">Vercel</span></div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="bento-card col-4 reveal reveal-d1">
-      <div class="bento-visual">
-        <div class="accuracy-ring"><div class="ring-inner">0.997</div></div>
-        <div style="position:absolute;bottom:14px;font-size:.68rem;color:var(--gray);z-index:1;letter-spacing:1.5px;font-family:'Space Mono',monospace;">R² SCORE</div>
-      </div>
-      <div class="bento-inner">
-        <div class="bento-label">ML · Statistical Analysis · Research</div>
-        <div class="bento-title">Global Suicide Rate Analysis</div>
-        <div class="bento-desc">Analyzed 30 years of global data. Random Forest massively outperformed traditional regression. Full EDA, feature engineering, and multi-country dataset cleaning.</div>
-        <div class="bento-result">📊 R² = 0.997 — Random Forest</div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bento-card col-6 reveal">
-      <div class="bento-visual">
-        <div class="code-block">
-          <div><span class="code-key">model</span> = RandomForestRegressor()</div>
-          <div><span class="code-key">model</span>.fit(X_train, y_train)</div>
-          <div><span class="code-key">r2_score</span>(y_test, y_pred)</div>
-          <div class="code-val">→ 0.9974</div>
-        </div>
-      </div>
-      <div class="bento-inner">
-        <div class="bento-label">Data Science · EDA · Professional</div>
-        <div class="bento-title">Data Analytics Internship — DecodeLabs</div>
-        <div class="bento-desc">Applied data cleaning, EDA, and visualization on real-world datasets. Delivered structured analytical reports in a professional curriculum.</div>
-        <div class="bento-result">✅ Certified Jun 2026</div>
-        <div class="bento-stack"><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">EDA</span><span class="tag">Reporting</span></div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="bento-card col-6 reveal reveal-d2">
-      <div class="bento-visual">
-        <div class="mini-bars">
-          <div class="mini-bar" style="height:28px;opacity:.35;"></div>
-          <div class="mini-bar" style="height:52px;"></div>
-          <div class="mini-bar" style="height:38px;opacity:.6;"></div>
-          <div class="mini-bar" style="height:72px;"></div>
-          <div class="mini-bar" style="height:44px;opacity:.55;"></div>
-          <div class="mini-bar" style="height:84px;"></div>
-          <div class="mini-bar" style="height:62px;opacity:.75;"></div>
-          <div class="mini-bar" style="height:90px;"></div>
-        </div>
-      </div>
-      <div class="bento-inner">
-        <div class="bento-label">Data Science · ML · Industry</div>
-        <div class="bento-title">Data Science Internship — Ai Data House</div>
-        <div class="bento-desc">Applied foundational and intermediate ML to real-world datasets. End-to-end experience from data ingestion to model evaluation in a team setting.</div>
-        <div class="bento-result">✅ Certified Aug 2025</div>
-        <div class="bento-stack"><span class="tag">Scikit-learn</span><span class="tag">Python</span><span class="tag">Data Cleaning</span><span class="tag">ML Pipelines</span></div>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="bento-card col-7 reveal">
-      <div class="bento-visual">
-        <div style="position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;">
-          <div style="font-size:48px;">🚢</div>
-          <div style="display:flex;gap:10px;">
-            <div style="background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2);border-radius:50px;padding:4px 12px;font-size:.7rem;color:var(--blue);font-weight:600;">Real-time tracking</div>
-            <div style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-radius:50px;padding:4px 12px;font-size:.7rem;color:var(--purple-light);font-weight:600;">Auto-updates</div>
-          </div>
-        </div>
-      </div>
-      <div class="bento-inner">
-        <div class="bento-label">Full-Stack · Supply Chain · Data Systems</div>
-        <div class="bento-title">Fleet Logistics Pro</div>
-        <div class="bento-desc">Smart supply chain management system with real-time shipment tracking, automated status update workflows, and interactive Leaflet.js map integration. Production-ready full-stack application.</div>
-        <div class="bento-stack"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Leaflet.js</span><span class="tag">Tailwind</span></div>
-      </div>
-    </div>
-
-    <!-- Card 6 CTA -->
-    <div class="bento-card col-5 reveal reveal-d1" style="background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(167,139,250,.05));border-color:rgba(124,58,237,.2);">
-      <div class="bento-inner" style="justify-content:center;align-items:center;text-align:center;min-height:260px;">
-        <div style="font-size:44px;margin-bottom:18px;">🔬</div>
-        <div class="bento-title">Explore all my work</div>
-        <p class="bento-desc" style="margin-bottom:24px;max-width:220px;margin-left:auto;margin-right:auto;">Source code, Jupyter notebooks, and docs for all projects.</p>
-        <a href="https://github.com/Omer684" target="_blank" class="btn-primary" style="font-size:.84rem;padding:11px 26px;">View GitHub →</a>
       </div>
     </div>
   </div>
@@ -1164,35 +1129,60 @@ footer p { font-size: .78rem; color: var(--gray); }
 
 <!-- CERTIFICATIONS -->
 <hr class="divider">
-<div class="section-wrap" id="certifications">
+<div class="section-wrap">
   <div class="reveal">
-    <span class="section-eyebrow">04 — Credentials</span>
-    <h2 class="section-title">Certified<br>& Verified</h2>
+    <span class="section-eyebrow">04 — Certifications</span>
+    <h2 class="section-title">Continuous Learning</h2>
   </div>
   <div class="certs-grid">
-    <div class="cert-card reveal"><span class="cert-icon">🏅</span><div><div class="cert-name">Data Analytics Internship</div><div class="cert-issuer">DecodeLabs</div><div class="cert-date">Jun 2026</div></div></div>
-    <div class="cert-card reveal reveal-d1"><span class="cert-icon">🏅</span><div><div class="cert-name">Certified Data Scientist</div><div class="cert-issuer">PM Accelerator</div><div class="cert-date">Jun 2026</div></div></div>
-    <div class="cert-card reveal reveal-d2"><span class="cert-icon">📊</span><div><div class="cert-name">Power BI for Beginners</div><div class="cert-issuer">Simplilearn</div><div class="cert-date">Apr 2026</div></div></div>
-    <div class="cert-card reveal reveal-d3"><span class="cert-icon">🗄️</span><div><div class="cert-name">SQL (Basic)</div><div class="cert-issuer">HackerRank</div><div class="cert-date">Jan 2026</div></div></div>
-    <div class="cert-card reveal"><span class="cert-icon">📈</span><div><div class="cert-name">Data Analytics Job Simulation</div><div class="cert-issuer">Deloitte</div><div class="cert-date">Dec 2025</div></div></div>
-    <div class="cert-card reveal reveal-d1"><span class="cert-icon">🤖</span><div><div class="cert-name">Data Science Internship</div><div class="cert-issuer">Ai Data House</div><div class="cert-date">Aug 2025</div></div></div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">📊</div>
+      <div>
+        <div class="cert-name">Certified Data Scientist</div>
+        <div class="cert-issuer">PM Accelerator</div>
+        <div class="cert-date">Jun 2026</div>
+      </div>
+    </div>
+    <div class="cert-card reveal reveal-d1">
+      <div class="cert-icon">💼</div>
+      <div>
+        <div class="cert-name">Power BI Certification</div>
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-date">Apr 2026</div>
+      </div>
+    </div>
+    <div class="cert-card reveal reveal-d2">
+      <div class="cert-icon">🗄️</div>
+      <div>
+        <div class="cert-name">SQL (Basic)</div>
+        <div class="cert-issuer">HackerRank</div>
+        <div class="cert-date">Jan 2026</div>
+      </div>
+    </div>
+    <div class="cert-card reveal reveal-d3">
+      <div class="cert-icon">📈</div>
+      <div>
+        <div class="cert-name">Data Analytics Simulation</div>
+        <div class="cert-issuer">Deloitte</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- CTA -->
-<hr class="divider">
 <div class="cta-section">
-  <div class="cta-inner reveal">
-    <h2 class="cta-title">Looking for a driven<br>Data Scientist?</h2>
-    <p class="cta-sub">Internships, research collaborations, junior roles, or freelance data projects — I'm open to opportunities where I can contribute and grow.</p>
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to transform your data?</h2>
+    <p class="cta-sub">Let's build something intelligent together.</p>
     <div class="cta-btns">
       <a href="#contact" class="btn-primary">Get in Touch →</a>
-      <a href="https://www.linkedin.com/in/muhammad-omer-b63814317" target="_blank" class="btn-outline" style="border-radius:50px;">🔗 LinkedIn Profile</a>
+      <a href="#projects" class="btn-outline">Explore Work</a>
     </div>
     <div class="cta-contact-row">
-      <a href="mailto:m.omarknb684@gmail.com" class="cta-link">📧 m.omarknb684@gmail.com</a>
-      <a href="https://github.com/Omer684" target="_blank" class="cta-link">🐙 github.com/Omer684</a>
-      <a href="https://wa.me/923159384108" target="_blank" class="cta-link">💬 WhatsApp</a>
+      <a href="mailto:m.omarknb684@gmail.com" class="cta-link">📧 Email</a>
+      <a href="https://linkedin.com/in/muhammadomer684" class="cta-link" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/Omer684" class="cta-link" target="_blank">🐙 GitHub</a>
     </div>
   </div>
 </div>
@@ -1202,269 +1192,228 @@ footer p { font-size: .78rem; color: var(--gray); }
 <div class="section-wrap" id="contact">
   <div class="reveal">
     <span class="section-eyebrow">05 — Contact</span>
-    <h2 class="section-title">Let's connect</h2>
+    <h2 class="section-title">Let's Talk</h2>
   </div>
   <div class="contact-grid">
-    <div class="reveal">
-      <div class="avail-badge-inline"><span class="avail-dot"></span>Available for opportunities</div>
-      <h3>Open to internships,<br>research & collaboration</h3>
-      <p>Whether you're a company looking for a data science intern, a researcher seeking a collaborator, or someone with an interesting ML problem — reach out. I reply within 24 hours.</p>
-      <div class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-label">Email</div><div class="contact-val">m.omarknb684@gmail.com</div></div></div>
-      <div class="contact-item"><div class="contact-icon">📱</div><div><div class="contact-label">WhatsApp / Phone</div><div class="contact-val">+92 315 938 4108</div></div></div>
-      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-val">Haripur, Khyber Pakhtunkhwa, Pakistan</div></div></div>
+    <div class="contact-info">
+      <h3>Get in touch for collaborations or inquiries.</h3>
+      <p>I'm always open to new challenges, interesting conversations, and exciting opportunities in data science and AI.</p>
+      <div class="avail-badge-inline">
+        <span class="avail-dot"></span>
+        Available for internships & roles
+      </div>
       <div class="contact-item">
-        <div class="contact-icon">🔗</div>
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-val">m.omarknb684@gmail.com</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💼</div>
         <div>
           <div class="contact-label">LinkedIn</div>
-          <div class="contact-val"><a href="https://www.linkedin.com/in/muhammad-omer-b63814317" target="_blank" style="color:var(--purple-light);text-decoration:none;">linkedin.com/in/muhammad-omer-b63814317</a></div>
+          <div class="contact-val">muhammadomer684</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🐙</div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-val">Omer684</div>
         </div>
       </div>
     </div>
-    <div class="reveal reveal-d1">
-      <div id="form-success">✅ Message sent! I'll reply within 24 hours.</div>
-      <form id="contact-form">
-        <div class="form-row">
-          <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required></div>
-          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="jane@company.com" required></div>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
         </div>
         <div class="form-group">
-          <label>Opportunity Type</label>
-          <select name="type">
-            <option value="">Select type...</option>
-            <option>Data Science Internship</option>
-            <option>AI / ML Engineering Role</option>
-            <option>Research Collaboration</option>
-            <option>Freelance Data Project</option>
-            <option>Mentorship / Networking</option>
-            <option>Other</option>
+          <label for="type">Type</label>
+          <select id="type" name="type" required>
+            <option value="">Select an option</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="opportunity">Opportunity</option>
+            <option value="inquiry">Inquiry</option>
+            <option value="other">Other</option>
           </select>
         </div>
-        <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="ML Engineering Role / Project Collaboration"></div>
-        <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell me about the opportunity or project..." required></textarea></div>
-        <button type="submit" class="form-submit">Send Message →</button>
-      </form>
-    </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message →</button>
+      <div id="form-success">✓ Message received! I'll get back to you shortly.</div>
+    </form>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><span>MO.</span></div>
-  <p>© 2026 Muhammad Omer · Data Scientist & AI Engineer · Haripur, KPK</p>
+  <div class="footer-logo">MO. <span>PORTFOLIO</span></div>
+  <p>© 2026 Muhammad Omer. All rights reserved.</p>
   <div class="footer-links">
-    <a href="mailto:m.omarknb684@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/muhammad-omer-b63814317" target="_blank">LinkedIn</a>
+    <a href="#hero">Back to top</a>
     <a href="https://github.com/Omer684" target="_blank">GitHub</a>
-    <a href="https://wa.me/923159384108" target="_blank">WhatsApp</a>
+    <a href="https://linkedin.com/in/muhammadomer684" target="_blank">LinkedIn</a>
   </div>
 </footer>
 
 <script>
-/* ── LOADER ── */
-(function(){
-  const bar = document.getElementById('loaderBar');
-  const pct = document.getElementById('loaderPct');
-  const loader = document.getElementById('loader');
-  let p = 0;
-  const iv = setInterval(() => {
-    p += Math.random() * 3.5 + 1.5;
-    if (p >= 100) { p = 100; clearInterval(iv); }
-    bar.style.width = p + '%';
-    pct.textContent = Math.floor(p) + '%';
-    if (p >= 100) setTimeout(() => loader.classList.add('gone'), 500);
-  }, 40);
-})();
-
-/* ── CURSOR ── */
-(function(){
-  const cur = document.getElementById('cursor');
-  const ring = document.getElementById('cursor-ring');
-  if (!cur) return;
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  (function anim(){
-    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-    rx += (mx - rx) * .13; ry += (my - ry) * .13;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(anim);
-  })();
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-large'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-large'));
+  // ── CURSOR ──
+  const cursor = document.getElementById('cursor');
+  const cursorRing = document.getElementById('cursor-ring');
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.left = e.clientY + 'px';
+    cursorRing.style.left = e.clientX + 'px';
+    cursorRing.style.top = e.clientY + 'px';
   });
-})();
 
-/* ── NAV SCROLL ── */
-const navbar = document.getElementById('navbar');
-const pb = document.getElementById('progress-bar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-  const ratio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-  pb.style.width = (ratio * 100) + '%';
-});
-
-/* ── PARALLAX HERO ── */
-window.addEventListener('scroll', () => {
-  const orbs = document.querySelectorAll('.hero-orb');
-  const s = window.scrollY;
-  orbs.forEach((o, i) => {
-    o.style.transform = `translateY(${s * (.05 + i * .03)}px)`;
+  // ── LOADER ──
+  window.addEventListener('load', () => {
+    document.getElementById('loader').classList.add('gone');
   });
-});
 
-/* ── PARTICLES CANVAS ── */
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-let W, H, particles = [], mx = window.innerWidth / 2, my = window.innerHeight / 2;
-function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-resize();
-window.addEventListener('resize', resize);
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  // ── PROGRESS BAR ──
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('progress-bar').style.width = scrolled + '%';
+  });
 
-class Particle {
-  constructor() { this.reset(); }
-  reset() {
-    this.x = Math.random() * W;
-    this.y = Math.random() * H;
-    this.vx = (Math.random() - .5) * .35;
-    this.vy = (Math.random() - .5) * .35;
-    this.r = Math.random() * 1.2 + .3;
-    this.alpha = Math.random() * .45 + .08;
-    this.hue = Math.random() < .7 ? 60 : (Math.random() < .5 ? 270 : 200); // yellow, purple, blue
-  }
-  update() {
-    this.x += this.vx; this.y += this.vy;
-    if (this.x < 0 || this.x > W) this.vx *= -1;
-    if (this.y < 0 || this.y > H) this.vy *= -1;
-    const dx = mx - this.x, dy = my - this.y;
-    const d = Math.sqrt(dx * dx + dy * dy);
-    if (d < 100) { this.x -= dx * .018; this.y -= dy * .018; }
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = this.hue === 60
-      ? `rgba(239,255,0,${this.alpha})`
-      : this.hue === 270
-      ? `rgba(124,58,237,${this.alpha})`
-      : `rgba(56,189,248,${this.alpha})`;
-    ctx.fill();
-  }
-}
+  // ── NAV SCROLL ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 0);
+  });
 
-for (let i = 0; i < 110; i++) particles.push(new Particle());
-
-function drawParticles() {
-  ctx.clearRect(0, 0, W, H);
-  particles.forEach(p => { p.update(); p.draw(); });
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const d = Math.sqrt(dx * dx + dy * dy);
-      if (d < 110) {
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(124,58,237,${.05 * (1 - d / 110)})`;
-        ctx.lineWidth = .5;
-        ctx.stroke();
+  // ── REVEAL ON SCROLL ──
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
       }
+    });
+  }, observerOptions);
+  document.querySelectorAll('.reveal').forEach(e => observer.observe(e));
+
+  // ── COUNTER ANIMATION ──
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.classList.contains('counted')) {
+        const target = parseInt(e.target.dataset.count);
+        let current = 0;
+        const increment = Math.ceil(target / 30);
+        const interval = setInterval(() => {
+          current += increment;
+          e.target.textContent = current >= target ? target : current;
+          if (current >= target) clearInterval(interval);
+        }, 40);
+        e.target.classList.add('counted');
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(e => counterObserver.observe(e));
+
+  // ── TYPED.JS SIMULATION ──
+  const phrases = [
+    'Computer Vision Apps',
+    'ML Pipelines',
+    'Data Insights',
+    'Full-Stack Solutions'
+  ];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  const typedElement = document.getElementById('typed');
+  function type() {
+    if (charIndex < phrases[phraseIndex].length) {
+      typedElement.textContent += phrases[phraseIndex][charIndex];
+      charIndex++;
+      setTimeout(type, 50);
+    } else {
+      setTimeout(() => {
+        typedElement.textContent = '';
+        charIndex = 0;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        type();
+      }, 2000);
     }
   }
-  requestAnimationFrame(drawParticles);
-}
-drawParticles();
+  type();
 
-/* ── TYPED ── */
-const roles = ['ML Systems', 'Data Pipelines', 'Computer Vision Apps', 'Predictive Models', 'Full-Stack Products'];
-let ri = 0, ci = 0, deleting = false;
-function type() {
-  const el = document.getElementById('typed');
-  if (!el) return;
-  const word = roles[ri];
-  if (!deleting) {
-    el.textContent = word.slice(0, ++ci);
-    if (ci === word.length) { deleting = true; setTimeout(type, 2200); return; }
-  } else {
-    el.textContent = word.slice(0, --ci);
-    if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
-  }
-  setTimeout(type, deleting ? 45 : 85);
-}
-setTimeout(type, 3200);
-
-/* ── SCROLL REVEAL ── */
-const obs = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 70);
-  });
-}, { threshold: .1 });
-document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
-
-/* ── COUNT UP ── */
-document.querySelectorAll('[data-count]').forEach(el => {
-  const target = +el.dataset.count;
-  const obs2 = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      let count = 0;
-      const iv = setInterval(() => {
-        count++; el.textContent = count;
-        if (count >= target) clearInterval(iv);
-      }, 180);
-      obs2.unobserve(el);
+  // ── CANVAS PARTICLES ──
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  let particles = [];
+  const particleCount = 50;
+  
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.radius = Math.random() * 1.5 + 0.5;
+      this.opacity = Math.random() * 0.5 + 0.2;
     }
-  });
-  obs2.observe(el);
-});
+    
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+    
+    draw() {
+      ctx.fillStyle = `rgba(239,255,0,${this.opacity})`;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  
+  for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+  
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
 
-/* ── BENTO TILT ── */
-document.querySelectorAll('.bento-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - .5;
-    const y = (e.clientY - r.top) / r.height - .5;
-    card.style.transform = `perspective(900px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-4px)`;
-  });
-  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-});
-
-/* ── MAGNETIC BUTTONS ── */
-document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn => {
-  btn.addEventListener('mousemove', e => {
-    const r = btn.getBoundingClientRect();
-    const x = (e.clientX - r.left - r.width / 2) * .28;
-    const y = (e.clientY - r.top - r.height / 2) * .28;
-    btn.style.transform = `translate(${x}px, ${y}px)`;
-  });
-  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-});
-
-/* ── FORM SUBMIT ── */
-const contactForm = document.getElementById('contact-form');
-const formSuccess = document.getElementById('form-success');
-if (contactForm) {
-  contactForm.addEventListener('submit', async function(e) {
+  // ── FORM SUBMISSION ──
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…'; btn.disabled = true;
-    const data = new FormData(contactForm);
-    try {
-      const res = await fetch('https://formspree.io/f/mrevyjlg', {
-        method: 'POST', body: data, headers: { Accept: 'application/json' }
-      });
-      if (res.ok) {
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-      } else {
-        btn.textContent = '⚠ Failed — try emailing directly';
-        btn.style.background = '#e53e3e'; btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = '⚠ Network error — try again'; btn.disabled = false;
-    }
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      document.getElementById('form-success').style.display = 'none';
+    }, 4000);
   });
-}
+
+  // ── RESPONSIVE CANVAS ──
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 </script>
 </body>
 </html>
