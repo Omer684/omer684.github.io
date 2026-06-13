@@ -695,11 +695,18 @@ select option { background: #13131f; }
   margin-top: 4px;
 }
 .form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(124,58,237,.4); }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 #form-success {
   display: none;
   background: rgba(52,211,153,.08); border: 1px solid rgba(52,211,153,.25);
   border-radius: 10px; padding: 28px; text-align: center; margin-top: 16px;
   color: var(--green); font-size: .95rem; font-weight: 500;
+}
+#form-error {
+  display: none;
+  background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.25);
+  border-radius: 10px; padding: 28px; text-align: center; margin-top: 16px;
+  color: #ef4444; font-size: .95rem; font-weight: 500;
 }
 
 /* ── FLOATING AVAIL BADGE ── */
@@ -1224,7 +1231,7 @@ footer p { font-size: .78rem; color: var(--gray); }
         </div>
       </div>
     </div>
-    <form id="contact-form">
+    <form id="contact-form" method="POST" action="https://formspree.io/f/mrevyjlg">
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required>
@@ -1254,7 +1261,8 @@ footer p { font-size: .78rem; color: var(--gray); }
         <textarea id="message" name="message" required></textarea>
       </div>
       <button type="submit" class="form-submit">Send Message →</button>
-      <div id="form-success">✓ Message received! I'll get back to you shortly.</div>
+      <div id="form-success">✓ Message sent successfully! I'll get back to you shortly.</div>
+      <div id="form-error">✗ Failed to send message. Please try again.</div>
     </form>
   </div>
 </div>
@@ -1399,14 +1407,47 @@ footer p { font-size: .78rem; color: var(--gray); }
   }
   animateParticles();
 
-  // ── FORM SUBMISSION ──
-  document.getElementById('contact-form').addEventListener('submit', (e) => {
+  // ── FORM SUBMISSION WITH FORMSPREE ──
+  document.getElementById('contact-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    document.getElementById('form-success').style.display = 'block';
-    e.target.reset();
-    setTimeout(() => {
+    const formData = new FormData(e.target);
+    const submitBtn = e.target.querySelector('.form-submit');
+    
+    try {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      const response = await fetch(e.target.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-error').style.display = 'none';
+        e.target.reset();
+        submitBtn.textContent = 'Send Message →';
+        
+        setTimeout(() => {
+          document.getElementById('form-success').style.display = 'none';
+          submitBtn.disabled = false;
+        }, 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      document.getElementById('form-error').style.display = 'block';
       document.getElementById('form-success').style.display = 'none';
-    }, 4000);
+      submitBtn.textContent = 'Send Message →';
+      submitBtn.disabled = false;
+      
+      setTimeout(() => {
+        document.getElementById('form-error').style.display = 'none';
+      }, 5000);
+    }
   });
 
   // ── RESPONSIVE CANVAS ──
