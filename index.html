@@ -432,23 +432,6 @@ section, .section-wrap { position: relative; z-index: 1; }
   color: var(--white);
 }
 
-/* ── OLD TECH STRIP ── */
-.tech-strip {
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
-  padding: 32px 0; overflow: hidden; position: relative; z-index: 1;
-  display: none;
-}
-.tech-strip-inner {
-  display: flex; gap: 52px;
-  animation: techScroll 24s linear infinite;
-  width: max-content;
-}
-@keyframes techScroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.tech-item { display: flex; align-items: center; gap: 9px; white-space: nowrap; }
-.tech-icon { font-size: 1.1rem; }
-.tech-name { font-size: .82rem; font-weight: 500; color: var(--gray); letter-spacing: .04em; }
-
 /* ── SECTION COMMONS ── */
 .section-wrap { padding: 120px 6vw; max-width: 1300px; margin: 0 auto; }
 .section-eyebrow {
@@ -956,16 +939,16 @@ footer p { font-size: .78rem; color: var(--gray); }
 
   <div class="hero-metrics">
     <div class="metric">
-      <div class="metric-num">0.997</div>
-      <div class="metric-label">R² Score</div>
+      <div class="metric-num">4</div>
+      <div class="metric-label">Flagship Projects</div>
     </div>
     <div class="metric">
-      <div class="metric-num">15–20×</div>
-      <div class="metric-label">Inference Speedup</div>
+      <div class="metric-num">6</div>
+      <div class="metric-label">Certifications</div>
     </div>
     <div class="metric">
-      <div class="metric-num">5+</div>
-      <div class="metric-label">Projects Shipped</div>
+      <div class="metric-num">2</div>
+      <div class="metric-label">Internships</div>
     </div>
   </div>
 
@@ -1091,20 +1074,20 @@ footer p { font-size: .78rem; color: var(--gray); }
   <div class="about-grid">
     <div>
       <p class="about-text reveal">I'm a <strong>BS Data Science student at PAF-IAST</strong>, Haripur, with a deep obsession for turning raw data into intelligent, production-ready systems. I focus on building end-to-end ML solutions that drive measurable impact.</p>
-      <p class="about-text reveal">From building an <strong>end-to-end License Plate Recognition system</strong> that runs 15–20× faster than baseline on CPU, to a <strong>Random Forest model achieving R² = 0.997</strong> on predictive logistics — I ship systems that work in the real world.</p>
-      <p class="about-text reveal">I've also designed full-stack web applications, network monitoring tools, and e-commerce platforms — proving that a data scientist can own the entire stack, not just the ML layer.</p>
+      <p class="about-text reveal">From building an <strong>end-to-end License Plate Recognition system</strong> that runs 15–20× faster than baseline on CPU, to <strong>predictive logistics engines</strong> and <strong>network monitoring systems</strong> — I ship systems that work in the real world.</p>
+      <p class="about-text reveal">I've also designed full-stack web applications, data visualization dashboards, and analytical systems — proving that a data scientist can own the entire stack, not just the ML layer.</p>
       <div class="about-stats">
         <div class="stat-card reveal">
-          <div class="stat-card-num" data-count="5">0</div>
-          <div class="stat-card-label">Projects Shipped</div>
+          <div class="stat-card-num" data-count="4">0</div>
+          <div class="stat-card-label">Flagship Projects</div>
         </div>
         <div class="stat-card reveal reveal-d1">
-          <div class="stat-card-num">0.997</div>
-          <div class="stat-card-label">Best R² Score</div>
+          <div class="stat-card-num">6</div>
+          <div class="stat-card-label">Certifications</div>
         </div>
         <div class="stat-card reveal reveal-d2">
-          <div class="stat-card-num" data-count="6">0</div>
-          <div class="stat-card-label">Certifications</div>
+          <div class="stat-card-num" data-count="2">0</div>
+          <div class="stat-card-label">Internships</div>
         </div>
         <div class="stat-card reveal reveal-d3">
           <div class="stat-card-num">20×</div>
@@ -1221,7 +1204,7 @@ footer p { font-size: .78rem; color: var(--gray); }
   </div>
   
   <div class="bento-grid">
-    <!-- PROJECT 1: License Plate Recognition -->
+    <!-- PROJECT 1: Real-Time License Plate Recognition -->
     <div class="bento-card col-8 reveal reveal-d1">
       <div class="bento-visual">
         <div style="position: relative; z-index: 1; text-align: center;">
@@ -1232,11 +1215,11 @@ footer p { font-size: .78rem; color: var(--gray); }
       </div>
       <div class="bento-inner">
         <div class="bento-label">Computer Vision</div>
-        <div class="bento-title">Smart License Plate Recognition System</div>
-        <div class="bento-desc">Real-time license plate detection and OCR using YOLOv8 on CPU with optimized inference pipeline.</div>
+        <div class="bento-title">Real-Time License Plate Recognition</div>
+        <div class="bento-desc">Production-grade license plate detection and OCR system using YOLOv8 with optimized CPU inference pipeline for real-time performance.</div>
         <div class="bento-result">⚡ Result: 20× faster inference on CPU</div>
         <div class="bento-buttons">
-          <a href="https://github.com/Omer684/license-plate-recognition" class="btn-github">🔗 GitHub Repo</a>
+          <a href="https://github.com/Omer684/Real-time-License-Plate-Recognition" target="_blank" class="btn-github">🔗 GitHub Repo</a>
         </div>
         <div class="bento-stack">
           <span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span class="tag">EasyOCR</span><span class="tag">Python</span>
@@ -1244,7 +1227,7 @@ footer p { font-size: .78rem; color: var(--gray); }
       </div>
     </div>
 
-    <!-- PROJECT 2: Predictive Logistics -->
+    <!-- PROJECT 2: Fleet Logistics Pro -->
     <div class="bento-card col-4 reveal reveal-d2">
       <div class="bento-visual">
         <div style="position: relative; z-index: 1;">
@@ -1259,19 +1242,19 @@ footer p { font-size: .78rem; color: var(--gray); }
       </div>
       <div class="bento-inner">
         <div class="bento-label">Predictive Analytics</div>
-        <div class="bento-title">Logistics Optimization Engine</div>
-        <div class="bento-desc">Route optimization using Random Forest with R² = 0.997 accuracy.</div>
-        <div class="bento-result">📊 Result: 0.997 R² Score</div>
+        <div class="bento-title">Fleet Logistics Pro</div>
+        <div class="bento-desc">Advanced route optimization & predictive logistics engine using ensemble ML models for fleet management.</div>
+        <div class="bento-result">📊 Result: Optimized routing efficiency</div>
         <div class="bento-buttons">
-          <a href="https://github.com/Omer684/logistics-optimizer" class="btn-github">🔗 GitHub</a>
+          <a href="https://github.com/Omer684/Fleet-Logistics-pro" target="_blank" class="btn-github">🔗 GitHub</a>
         </div>
         <div class="bento-stack">
-          <span class="tag">Random Forest</span><span class="tag">XGBoost</span>
+          <span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">Pandas</span>
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 3: Anomaly Detection -->
+    <!-- PROJECT 3: Global Suicide Rate Analysis -->
     <div class="bento-card col-4 reveal reveal-d3">
       <div class="bento-visual">
         <div style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 8px;">
@@ -1281,53 +1264,34 @@ footer p { font-size: .78rem; color: var(--gray); }
         </div>
       </div>
       <div class="bento-inner">
-        <div class="bento-label">Anomaly Detection</div>
-        <div class="bento-title">Network Monitoring System</div>
-        <div class="bento-desc">Real-time network anomaly detection using isolation forests.</div>
-        <div class="bento-result">🔍 Result: 96% Detection Rate</div>
+        <div class="bento-label">Data Analytics</div>
+        <div class="bento-title">Global Suicide Rate Prediction</div>
+        <div class="bento-desc">Statistical analysis & predictive modeling of global suicide rates with demographic segmentation and trend analysis.</div>
+        <div class="bento-result">📈 Result: Multi-factor analysis</div>
         <div class="bento-buttons">
-          <a href="https://github.com/Omer684/network-monitoring" class="btn-github">🔗 GitHub</a>
+          <a href="https://github.com/Omer684/global-suicide-rate-prediction" target="_blank" class="btn-github">🔗 GitHub</a>
         </div>
         <div class="bento-stack">
-          <span class="tag">Isolation Forest</span><span class="tag">Python</span>
+          <span class="tag">Statistical Analysis</span><span class="tag">Seaborn</span><span class="tag">Python</span>
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 4: E-Commerce Analytics -->
+    <!-- PROJECT 4: Net Pulse -->
     <div class="bento-card col-6 reveal reveal-d1">
       <div class="bento-visual">
-        <div style="position: relative; z-index: 1; text-align: center; font-size: 2rem;">📈</div>
+        <div style="position: relative; z-index: 1; text-align: center; font-size: 2rem;">🔗</div>
       </div>
       <div class="bento-inner">
-        <div class="bento-label">Business Intelligence</div>
-        <div class="bento-title">E-Commerce Analytics Dashboard</div>
-        <div class="bento-desc">Full-stack dashboard with real-time inventory tracking, sales forecasting, and customer segmentation.</div>
-        <div class="bento-result">💼 Result: 45% Revenue Increase Identification</div>
+        <div class="bento-label">Network Monitoring</div>
+        <div class="bento-title">Net Pulse</div>
+        <div class="bento-desc">Real-time network monitoring and anomaly detection system with comprehensive health metrics and alert system.</div>
+        <div class="bento-result">🌐 Result: Network health monitoring</div>
         <div class="bento-buttons">
-          <a href="https://github.com/Omer684/ecommerce-analytics" class="btn-github">🔗 GitHub</a>
+          <a href="https://github.com/Omer684/net-pulse" target="_blank" class="btn-github">🔗 GitHub</a>
         </div>
         <div class="bento-stack">
-          <span class="tag">Power BI</span><span class="tag">Flask</span><span class="tag">SQL</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECT 5: NLP Model -->
-    <div class="bento-card col-6 reveal reveal-d2">
-      <div class="bento-visual">
-        <div style="position: relative; z-index: 1; text-align: center; font-size: 2rem;">🤖</div>
-      </div>
-      <div class="bento-inner">
-        <div class="bento-label">NLP / LLM</div>
-        <div class="bento-title">Sentiment Analysis & NLP Pipeline</div>
-        <div class="bento-desc">Advanced text processing with transformer models and sentiment classification.</div>
-        <div class="bento-result">✨ Result: 92% Classification Accuracy</div>
-        <div class="bento-buttons">
-          <a href="https://github.com/Omer684/nlp-sentiment" class="btn-github">🔗 GitHub</a>
-        </div>
-        <div class="bento-stack">
-          <span class="tag">Transformers</span><span class="tag">PyTorch</span><span class="tag">NLP</span>
+          <span class="tag">Network Analysis</span><span class="tag">Python</span><span class="tag">Monitoring</span>
         </div>
       </div>
     </div>
