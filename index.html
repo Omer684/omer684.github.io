@@ -291,6 +291,7 @@ section,.sw{position:relative;z-index:2;}
 .ec-bullets{list-style:none;}
 .ec-bullets li{font-size:.83rem;color:var(--muted2);line-height:1.62;padding-left:16px;position:relative;margin-bottom:6px;}
 .ec-bullets li::before{content:'→';position:absolute;left:0;color:var(--lime);font-size:.65rem;top:4px;}
+.ec-tag{display:inline-block;margin-top:2px;font-size:.6rem;padding:2px 9px;border-radius:4px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);color:var(--violet3);font-family:var(--font-mono);letter-spacing:.06em;}
 
 /* certs */
 .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:20px;}
@@ -359,7 +360,7 @@ footer p{font-size:.74rem;color:var(--muted);}
   <div class="ld-name">MUHAMMAD OMER</div>
   <div class="ld-bar-wrap"><div class="ld-bar" id="ldBar"></div></div>
   <div class="ld-pct" id="ldPct">0%</div>
-  <div class="ld-tagline">Data Scientist · AI Engineer · ML Builder</div>
+  <div class="ld-tagline">Data Science Undergraduate . Data Analyst | Machine Learning Practitionerr</div>
 </div>
 <a href="#contact" class="avail-float"><span class="pulse-dot"></span>Open to opportunities</a>
 <canvas id="canvas"></canvas>
@@ -448,15 +449,15 @@ footer p{font-size:.74rem;color:var(--muted);}
       <p class="about-p r">On the analytics side, I've built <strong>end-to-end SQL analysis projects</strong> covering advanced window functions (LAG, RANK, NTILE), cohort retention analysis, RFM customer segmentation, and attrition modeling — all on real, messy public datasets of 100K+ rows.</p>
       <p class="about-p r">My flagship ML work is an <strong>end-to-end License Plate Recognition pipeline</strong> using YOLOv8, OpenCV, and EasyOCR — optimized to run at ~0.6s/frame on CPU, achieving a <strong>15–20× inference speedup</strong> over baseline through async threading and lazy model loading.</p>
       <p class="about-p r">I've also built a <strong>Fleet Intelligence Platform</strong> — a logistics control-tower combining a Random Forest demand forecaster (<strong>R² = 0.94</strong>) with a SciPy linear-programming optimizer that reallocates idle fleet from surplus to deficit zones.</p>
-      <p class="about-p r">Certified by <strong>Deloitte, PM Accelerator, Simplilearn, and HackerRank</strong>. Interned at two data science organizations. Always building.</p>
+      <p class="about-p r">Beyond building, I serve as <strong>Director of Research &amp; Innovation</strong> at Grow Pakistan Innovation Network, and I've completed data science job simulation programs through <strong>Deloitte, PM Accelerator, Simplilearn, and HackerRank</strong>. Always building.</p>
       <div class="resume-card r">
         <div class="rc-title">📄 Resume / CV</div>
         <div class="rc-sub">Updated July 2026 · BS Data Science · PAF-IAST</div>
         <div class="rc-highlights">
-          <div class="rc-h">2 Industry Internships (DecodeLabs, Ai Data House)</div>
+          <div class="rc-h">Director of Research &amp; Innovation, Grow Pakistan Innovation Network</div>
+          <div class="rc-h">2 Data Science Job Simulations (DecodeLabs, Ai Data House)</div>
           <div class="rc-h">6 Professional Certifications</div>
           <div class="rc-h">6+ Shipped Projects across SQL Analytics, ML, CV, Full-Stack</div>
-          <div class="rc-h">Advanced SQL · Machine Learning · Computer Vision specialist</div>
         </div>
         <div class="rc-btns">
           <a href="https://omer684.github.io/resume.pdf" download class="btn-rc-dl">⬇ Download PDF</a>
@@ -473,12 +474,13 @@ footer p{font-size:.74rem;color:var(--muted);}
     <div>
       <span class="eyebrow r">Timeline</span>
       <div class="tl r">
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">May – Jun 2026</div><div class="tl-title">Data Analytics Intern — DecodeLabs</div><div class="tl-sub">Real-world EDA, data cleaning, visualization, and analytical reporting.</div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--violet3);box-shadow:0 0 10px rgba(196,181,253,.4);"></div><div class="tl-date">Jul 2026 – Present</div><div class="tl-title">Director of Research &amp; Innovation — Grow Pakistan Innovation Network</div><div class="tl-sub">Leading university partnership outreach and workshop planning to expand research culture and student engagement nationally.</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">May – Jun 2026</div><div class="tl-title">Data Analytics Job Simulation — DecodeLabs</div><div class="tl-sub">Real-world EDA, data cleaning, visualization, and analytical reporting.</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jun 2026</div><div class="tl-title">Certified Data Scientist — PM Accelerator</div><div class="tl-sub">End-to-end ML workflows, model deployment, and business application of data science.</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Apr 2026</div><div class="tl-title">Power BI Certification — Simplilearn</div><div class="tl-sub">Business intelligence dashboards, DAX, and data-driven decision making.</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jan 2026</div><div class="tl-title">SQL (Basic) — HackerRank</div><div class="tl-sub">Structured query language, joins, subqueries, and database fundamentals.</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Dec 2025</div><div class="tl-title">Data Analytics Simulation — Deloitte</div><div class="tl-sub">Forensic analysis and professional business reporting.</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jul – Aug 2025</div><div class="tl-title">Data Science Intern — Ai Data House</div><div class="tl-sub">Applied ML techniques to live production datasets in a professional team.</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jul – Aug 2025</div><div class="tl-title">Data Science Job Simulation — Ai Data House</div><div class="tl-sub">Applied ML techniques to guided industry training datasets.</div></div>
         <div class="tl-item"><div class="tl-dot" style="background:var(--violet3);box-shadow:0 0 10px rgba(196,181,253,.4);"></div><div class="tl-date">2024 – 2028 (Expected)</div><div class="tl-title">BS Data Science — PAF-IAST, Haripur</div><div class="tl-sub">Member of ML research groups. Active in deep learning and AI seminars. FSc CS (2024).</div></div>
       </div>
     </div>
@@ -766,24 +768,31 @@ footer p{font-size:.74rem;color:var(--muted);}
   </div>
   <div class="exp-cards">
     <div class="ec r">
-      <div><div class="ec-period">May 2026 – Jun 2026</div><div class="ec-company">DecodeLabs</div></div>
+      <div><div class="ec-period">Jul 2026 – Present</div><div class="ec-company">Grow Pakistan Innovation Network</div><span class="ec-tag">Volunteer</span></div>
       <div>
-        <div class="ec-title">Data Analytics Intern</div>
+        <div class="ec-title">Director of Research &amp; Innovation</div>
         <ul class="ec-bullets">
-          <li>Worked on real-world industry datasets through a structured virtual internship curriculum</li>
-          <li>Applied advanced data cleaning pipelines, EDA techniques, and visual storytelling workflows</li>
-          <li>Delivered analytical reports translating multi-dimensional datasets into clear business insights</li>
+          <li>Leading university partnership outreach and workshop planning to expand research culture and student engagement nationally</li>
         </ul>
       </div>
     </div>
     <div class="ec r rd1">
-      <div><div class="ec-period">Jul 2025 – Aug 2025</div><div class="ec-company">Ai Data House</div></div>
+      <div><div class="ec-period">May 2026 – Jun 2026</div><div class="ec-company">DecodeLabs</div><span class="ec-tag">Job Simulation</span></div>
       <div>
-        <div class="ec-title">Data Science Intern</div>
+        <div class="ec-title">Data Analytics Job Simulation</div>
         <ul class="ec-bullets">
-          <li>Applied foundational to intermediate data science techniques on live production datasets</li>
-          <li>Implemented end-to-end ML workflows: data ingestion → cleaning → feature engineering → model evaluation</li>
-          <li>Collaborated in a cross-functional team environment to deliver data-driven solutions under professional deadlines</li>
+          <li>Cleaned and analyzed real-world datasets in a self-paced virtual program, applying EDA and visualization techniques to surface trends across multiple data sources</li>
+          <li>Built visual reports (charts, summary tables) and a final analytics report following a documented, repeatable workflow from raw data to recommendation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ec r rd2">
+      <div><div class="ec-period">Jul 2025 – Aug 2025</div><div class="ec-company">Ai Data House</div><span class="ec-tag">Job Simulation</span></div>
+      <div>
+        <div class="ec-title">Data Science Job Simulation</div>
+        <ul class="ec-bullets">
+          <li>Applied core data science workflows — data cleaning, exploratory analysis, and model evaluation — to real datasets in a self-paced, guided industry training program</li>
+          <li>Practiced foundational machine learning techniques (regression, classification) and built habits in version control and reproducible analysis</li>
         </ul>
       </div>
     </div>
@@ -798,12 +807,12 @@ footer p{font-size:.74rem;color:var(--muted);}
     <h2 class="sec-title">Certified &amp; Verified</h2>
   </div>
   <div class="certs-grid">
-    <div class="cert r"><span class="cert-ico">🏅</span><div><div class="cert-name">Data Analytics Internship</div><div class="cert-issuer">DecodeLabs</div><div class="cert-date">Jun 2026</div></div></div>
+    <div class="cert r"><span class="cert-ico">🏅</span><div><div class="cert-name">Data Analytics Job Simulation</div><div class="cert-issuer">DecodeLabs</div><div class="cert-date">Jun 2026</div></div></div>
     <div class="cert r rd1"><span class="cert-ico">🎓</span><div><div class="cert-name">Certified Data Scientist</div><div class="cert-issuer">PM Accelerator</div><div class="cert-date">Jun 2026</div></div></div>
     <div class="cert r rd2"><span class="cert-ico">📊</span><div><div class="cert-name">Power BI for Beginners</div><div class="cert-issuer">Simplilearn</div><div class="cert-date">Apr 2026</div></div></div>
     <div class="cert r rd3"><span class="cert-ico">🗄️</span><div><div class="cert-name">SQL (Basic)</div><div class="cert-issuer">HackerRank</div><div class="cert-date">Jan 2026</div></div></div>
     <div class="cert r"><span class="cert-ico">📈</span><div><div class="cert-name">Data Analytics Job Simulation</div><div class="cert-issuer">Deloitte</div><div class="cert-date">Dec 2025</div></div></div>
-    <div class="cert r rd1"><span class="cert-ico">🤖</span><div><div class="cert-name">Data Science Internship</div><div class="cert-issuer">Ai Data House</div><div class="cert-date">Aug 2025</div></div></div>
+    <div class="cert r rd1"><span class="cert-ico">🤖</span><div><div class="cert-name">Data Science Job Simulation</div><div class="cert-issuer">Ai Data House</div><div class="cert-date">Aug 2025</div></div></div>
   </div>
 </div>
 
