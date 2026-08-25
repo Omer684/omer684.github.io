@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --nav-h: 76px;
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+    scroll-padding-top: var(--nav-h);
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+
+  /* Accessible focus ring */
+  :focus-visible {
+    outline: 2px solid theme('colors.accent.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* Respect reduced motion globally as a safety net */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-6 md:px-10;
+  }
+
+  /* Editorial mono label used for section eyebrows / tags */
+  .label {
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-subtle;
+  }
+
+  /* Hairline card with the brutalist visible-border language */
+  .card-line {
+    @apply border border-line bg-paper-card transition-[border-color,transform,box-shadow] duration-300 ease-expo;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@layer utilities {
+  /* Subtle paper grain for texture without images */
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1.5px #09090b;
+    color: transparent;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Hide scrollbar for horizontal marquees */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
