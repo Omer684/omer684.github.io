@@ -13,17 +13,17 @@ const projectItems = projects.map((p) => ({
 
 export default function Projects() {
   return (
-    <section id="work" className="scroll-mt-24 border-b border-line py-24 md:py-32">
+    <section id="work" className="scroll-mt-24 border-b border-line py-14 md:py-20">
       <div className="container-wide">
         <SectionHeader index="02" eyebrow="Selected work" title="Things I've shipped" />
 
         <Pipeline />
 
-        <div className="mt-16 md:mt-24">
+        <div className="mt-10 md:mt-14">
           <CircularGallery
             items={projectItems}
             bend={3}
-            height={480}
+            height={380}
             label="Selected projects — spinning gallery of titles"
             hint={`Drag to spin · ${projects.length} projects`}
           />

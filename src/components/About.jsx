@@ -3,7 +3,7 @@ import Reveal from './ui/Reveal'
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-24 border-b border-line py-24 md:py-32">
+    <section id="about" className="scroll-mt-24 border-b border-line py-14 md:py-20">
       <div className="container-wide">
         <Reveal className="flex items-center gap-3">
           <span className="label text-accent">01</span>

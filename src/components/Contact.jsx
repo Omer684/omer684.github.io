@@ -37,7 +37,7 @@ export default function Contact() {
   const labelCls = 'label mb-2 block'
 
   return (
-    <section id="contact" className="scroll-mt-24 py-24 md:py-32">
+    <section id="contact" className="scroll-mt-24 py-14 md:py-20">
       <div className="container-wide">
         <SectionHeader
           index="05"

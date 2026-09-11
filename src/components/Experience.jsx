@@ -9,7 +9,7 @@ export default function Experience() {
   const reduce = useReducedMotion()
 
   return (
-    <section id="experience" className="scroll-mt-24 border-b border-line py-24 md:py-32">
+    <section id="experience" className="scroll-mt-24 border-b border-line py-14 md:py-20">
       <div className="container-wide">
         <SectionHeader
           index="04"

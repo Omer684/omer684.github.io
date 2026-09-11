@@ -11,7 +11,7 @@ const certItems = certifications.map((c) => ({
 
 export default function Certifications() {
   return (
-    <section className="border-b border-line bg-paper py-24 md:py-28">
+    <section className="border-b border-line bg-paper py-14 md:py-20">
       <div className="container-wide">
         <div className="flex items-center gap-3">
           <BadgeCheck size={16} className="text-accent" />
@@ -20,11 +20,11 @@ export default function Certifications() {
           <span className="h-px flex-1 bg-line" />
         </div>
 
-        <div className="mt-12 md:mt-16">
+        <div className="mt-8 md:mt-12">
           <CircularGallery
             items={certItems}
             bend={3}
-            height={440}
+            height={340}
             label="Certifications — spinning gallery"
             hint={`Drag to spin · ${certifications.length} certifications`}
           />

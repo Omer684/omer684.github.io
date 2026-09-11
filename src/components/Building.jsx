@@ -4,7 +4,7 @@ import Reveal from './ui/Reveal'
 
 export default function Building() {
   return (
-    <section className="border-b border-line bg-ink text-paper py-24 md:py-32">
+    <section className="border-b border-line bg-ink text-paper py-14 md:py-20">
       <div className="container-wide">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
